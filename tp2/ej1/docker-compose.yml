@@ -8,7 +8,7 @@ services:
     ports:
       - "5432:5432"
     volumes:
-      - ./db/schema/schema.sql:/docker-entrypoint-initdb.d/schema.sql
+      - ./db/schema/schema.sql:/docker-entrypoint-initdb.d/1-schema.sql
   
   webserver:
     image: golang:latest
@@ -17,6 +17,6 @@ services:
       - ./ws:/app
     ports:
       - "8080:8080"
-    command: go run ./ws/main.go
+    command: go run .
     depends_on:
       - db
