@@ -1,0 +1,22 @@
+services:
+  db:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: tomi
+      POSTGRES_PASSWORD: 123
+      POSTGRES_DB: mydb
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./db/schema/schema.sql:/docker-entrypoint-initdb.d/schema.sql
+  
+  webserver:
+    image: golang:latest
+    working_dir: /app
+    volumes:
+      - ./ws:/app
+    ports:
+      - "8080:8080"
+    command: go run ./ws/main.go
+    depends_on:
+      - db
