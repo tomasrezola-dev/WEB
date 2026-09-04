@@ -105,6 +105,8 @@ func (r *userRepository) deleteUser(id int64) error {
 
 
 func main() {
+	fmt.Println("Iniciando la aplicación...")
+	/*
 	db, err := abirDB()
 	if err != nil {
 		fmt.Println("Error al abrir la base de datos:", err)
@@ -113,6 +115,7 @@ func main() {
 
 	repo := &userRepository{db: db}
 
+	
 	//creacion usuario
 	id, err := repo.createUser(&User{name: "tomi", email: "tomi@example.com"})
 	if err != nil {
@@ -149,5 +152,5 @@ func main() {
 		fmt.Println("Error al eliminar el usuario:", err)
 	}
 	fmt.Println("Usuario eliminado")
-
+	*/
 }
