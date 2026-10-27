@@ -1,0 +1,16 @@
+.box {
+    width: 300px;
+    padding: 15px;  
+    border: 2px solid black;
+    margin: 20px;
+}
+
+.box:nth-child(1) {
+    background-color: aquamarine;
+}
+.box:nth-child(2) {
+    background-color: bisque;
+}
+.box:nth-child(3) {
+    background-color: darkblue;
+}
