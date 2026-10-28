@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foro</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <div class="grid-container">
+        <header class="grid-item header">
+            <div class="switch-button">
+                <!-- Checkbox -->
+                <input type="checkbox" name="switch-button" id="switch-label" aria-label="Interruptor" class="switch-button__checkbox">
+                <!-- Botón -->
+                <label for="switch-label" class="switch-button__label"></label>
+            </div>
+        </header>
+        <section class="grid-item data">
+            <div id="data-container">
+                <table id="table">
+                    <thead id="encabezado">
+                        <tr>
+                            <th>User</th>
+                            <th>Mail</th>
+                            <th>Accion</th>
+                        </tr>
+                    </thead>
+                    <tbody id="usuarios-body"></tbody>
+                </table>
+            </div>
+        </section>
+        <main class="grid-item form">
+            <div id="form-container">
+                <form id="form">
+                    <label>Nombre:</label><br>
+                    <input type="text" id="usuarios_1"><br><br>
+                    <label>Mail:</label><br>
+                    <input type="text" id="usuarios_2"><br><br>
+                    <label>Password:</label><br>
+                    <input type="password" id="usuarios_3"><br><br>
+                    <button type="submit">Enviar</button>
+                </form> 
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,182 @@
+html, body {
+    min-height: 100%;
+}
+body {
+    min-height: 100vh;
+    margin: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    grid-template-rows: 80px minmax(0, 1fr);
+    grid-template-areas:
+        "header header"
+        "data form";
+
+    height: 500px;
+    width: 1600px;
+    color: white;
+    background-color: #203576;
+    border: 5px solid #ffa200;
+    margin: auto;
+    box-sizing: border-box;
+}
+
+/* datos */
+.data {
+    display: flex;
+    justify-content:center;
+    align-items:baseline;
+    grid-area: data;
+    background-color: #ffa200;
+    border: 5px solid #ffffff;
+    margin: 20px;
+    box-sizing: border-box;
+    min-width: 0;
+    min-height: 0;
+    overflow: hidden;
+}
+
+#data-container {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    flex: 1;
+    min-width: 0;
+    min-height: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+
+/* formulario */
+.form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: form;
+    background-color: #ffa200;
+    border: 5px solid #ffffff;
+    margin: 20px;
+    min-width: 0;
+    min-height: 0;
+    overflow: auto;
+}
+
+#form {
+    color: black;
+    transform: scale(1.5);
+}
+
+/*button switch*/
+.header {
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    grid-area: header;
+    margin: 11px;
+}
+:root {
+    --color-green: #00a878;
+    --color-red: #fe5e41;
+    --color-button: #fdffff;
+    --color-black: #000;
+}
+.switch-button {
+    display: inline-block;
+}
+/* Oculto visualmente, pero sigue en el teclado y en el lector de pantalla */
+.switch-button .switch-button__checkbox {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+}
+/* Anillo de foco sobre el botón al navegar con teclado */
+.switch-button .switch-button__checkbox:focus-visible + .switch-button__label {
+    outline: 2px solid var(--color-black);
+    outline-offset: 2px;
+}
+.switch-button .switch-button__label {
+    background-color: var(--color-red);
+    width: 5rem;
+    height: 3rem;
+    border-radius: 3rem;
+    display: inline-block;
+    position: relative;
+}
+.switch-button .switch-button__label:before {
+    transition: .2s;
+    display: block;
+    position: absolute;
+    width: 3rem;
+    height: 3rem;
+    background-color: var(--color-button);
+    content: '';
+    border-radius: 50%;
+    box-shadow: inset 0px 0px 0px 1px var(--color-black);
+}
+.switch-button .switch-button__checkbox:checked + .switch-button__label {
+    background-color: var(--color-green);
+}
+.switch-button .switch-button__checkbox:checked + .switch-button__label:before {
+    transform: translateX(2rem);
+}
+
+/* tablas */
+table {
+  font-family: arial, sans-serif;
+  border-collapse:separate;
+  width: 100%;
+  table-layout: fixed;
+}
+
+td, th {
+  border: 2px solid #000000;
+  text-align: center;
+  padding: 13px;
+  color: black;
+  overflow-wrap: anywhere;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+.tabla-usuarios th:nth-child(1) {
+    width: 20%;
+}
+
+.tabla-usuarios th:nth-child(2) {
+    width: 60%;
+}
+
+.tabla-usuarios th:nth-child(3) {
+    width: 20%;
+}
+
+.tabla-mensajes th:nth-child(1) {
+    width: 10%;
+}
+
+.tabla-mensajes th:nth-child(2) {
+    width: 15%;
+}
+
+.tabla-mensajes th:nth-child(3) {
+    width: 50%;
+}
+
+.tabla-mensajes th:nth-child(4) {
+    width: 10%;
+}
+
+.tabla-mensajes th:nth-child(5) {
+    width: 15%;
+}
