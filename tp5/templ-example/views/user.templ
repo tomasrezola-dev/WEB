@@ -1,0 +1,20 @@
+package views
+
+import "templ-example/models"
+
+templ UserList(users []models.User) {
+    <ul>
+        for _, user := range users {
+            <li>{ user.Name } - { user.Email }</li>
+        }
+    </ul>
+}
+
+templ UserPage(users []models.User) {
+    <html>
+        <body>
+            <h1>Lista de Usuarios</h1>
+            @UserList(users)
+        </body>
+    </html>
+}
